@@ -1,6 +1,5 @@
 package mdtest.example.com.mdtest;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -35,7 +34,7 @@ public class MainActivity extends AppCompatActivity{
 
         mViewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
 
-            private String[] mTitles = new String[]{"1", "2", "3", "4"};
+            private String[] mTitles = new String[]{"微信", "通讯录", "发现", "我"};
 
             @Override
             public Fragment getItem(int position) {
@@ -61,6 +60,8 @@ public class MainActivity extends AppCompatActivity{
 
         });
 
+        
+
         mTablayout.setupWithViewPager(mViewPager);
 
         one = mTablayout.getTabAt(0);
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity{
         three = mTablayout.getTabAt(2);
         four = mTablayout.getTabAt(3);
 
-        one.setIcon(getResources().getDrawable(R.mipmap.ic_launcher));
+        one.setIcon(getResources().getDrawable(R.mipmap.chat_select));
         two.setIcon(getResources().getDrawable(R.mipmap.ic_launcher));
         three.setIcon(getResources().getDrawable(R.mipmap.ic_launcher));
         four.setIcon(getResources().getDrawable(R.mipmap.ic_launcher));
@@ -82,16 +83,16 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if (tab == mTablayout.getTabAt(0)) {
-                    one.setIcon(getResources().getDrawable(R.mipmap.ic_launcher));
+                    one.setIcon(getResources().getDrawable(R.mipmap.chat_select));
                     mViewPager.setCurrentItem(0);
                 } else if (tab == mTablayout.getTabAt(1)) {
-                    two.setIcon(getResources().getDrawable(R.mipmap.ic_launcher));
+                    two.setIcon(getResources().getDrawable(R.mipmap.choose));
                     mViewPager.setCurrentItem(1);
                 } else if (tab == mTablayout.getTabAt(2)) {
-                    three.setIcon(getResources().getDrawable(R.mipmap.ic_launcher));
+                    three.setIcon(getResources().getDrawable(R.mipmap.choose));
                     mViewPager.setCurrentItem(2);
                 }else if (tab == mTablayout.getTabAt(3)){
-                    four.setIcon(getResources().getDrawable(R.mipmap.ic_launcher));
+                    four.setIcon(getResources().getDrawable(R.mipmap.choose));
                     mViewPager.setCurrentItem(3);
                 }
 
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
                 if (tab == mTablayout.getTabAt(0)) {
-                    one.setIcon(getResources().getDrawable(R.mipmap.ic_launcher));
+                    one.setIcon(getResources().getDrawable(R.mipmap.chat_unselect));
                 } else if (tab == mTablayout.getTabAt(1)) {
                     two.setIcon(getResources().getDrawable(R.mipmap.ic_launcher));
                 } else if (tab == mTablayout.getTabAt(2)) {
